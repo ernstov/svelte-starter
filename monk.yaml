@@ -1,0 +1,21 @@
+namespace: svelte-starter
+
+sveltekit-frontend:
+  defines: runnable
+  metadata:
+    name: sveltekit-frontend
+    description: A SvelteKit frontend application for data-driven visual stories.
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    sveltekit-frontend:
+      image: env-2758.registry.local/sveltekit-frontend:main-e7c6362
+      build: .
+      dockerfile: Dockerfile.sveltekit-frontend
+  services: {}
+  connections: {}
+  variables: {}
+
+stack:
+  defines: group
+  members:
+    - svelte-starter/sveltekit-frontend
