@@ -1,0 +1,35 @@
+namespace: svelte-starter
+
+sveltekit-frontend:
+  defines: runnable
+  metadata:
+    name: sveltekit-frontend
+    description: A SvelteKit frontend service for data-driven visual stories.
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    sveltekit-frontend:
+      image: env-2107.registry.local/sveltekit-frontend:main-e7c6362
+      build: .
+      dockerfile: Dockerfile.sveltekit-frontend
+  services:
+    http:
+      description: HTTP port for the SvelteKit frontend service
+      container: sveltekit-frontend
+      port: 80
+      host-port: 80
+      publish: true
+      protocol: tcp
+    https:
+      description: HTTPS port for the SvelteKit frontend service
+      container: sveltekit-frontend
+      port: 443
+      host-port: 443
+      publish: true
+      protocol: tcp
+  connections: {}
+  variables: {}
+
+stack:
+  defines: group
+  members:
+    - svelte-starter/sveltekit-frontend
