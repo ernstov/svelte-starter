@@ -1,0 +1,41 @@
+namespace: svelte-starter
+
+svelte-starter-web:
+  defines: runnable
+  metadata:
+    name: svelte-starter-web
+    description: Static web service for the SvelteKit application
+    icon: https://emojiapi.dev/api/v1/globe_with_meridians.svg
+  containers:
+    svelte-starter-web:
+      image: env-5051.registry.local/svelte-starter-web:main-mh0cuw
+      build: .
+      dockerfile: Dockerfile.svelte-starter-web
+  services:
+    http:
+      description: HTTP port for web traffic
+      container: svelte-starter-web
+      port: 80
+      host-port: 80
+      publish: true
+      protocol: tcp
+    https:
+      description: HTTPS port for secure web traffic
+      container: svelte-starter-web
+      port: 443
+      host-port: 443
+      publish: true
+      protocol: tcp
+  connections: {}
+  variables: {}
+
+stack:
+  defines: group
+  members:
+    - svelte-starter/svelte-starter-web
+  metadata:
+    name: svelte-starter
+    description: >-
+      A SvelteKit project designed for data-driven, visual stories that
+      generates a statically rendered site.
+    icon: https://emojiapi.dev/api/v1/globe_with_meridians.svg
