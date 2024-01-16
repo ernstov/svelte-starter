@@ -1,7 +1,5 @@
 # Svelte Starter
 
-This [starter template](https://github.com/the-pudding/svelte-starter) aims to quickly scaffold a [SvelteKit](https://kit.svelte.dev/) project, designed around data-driven, visual stories at [The Pudding](https://pudding.cool).
-
 ### Notes
 * _Do not use or reproduce The Pudding logos or fonts without written permission._
 * _Prettier Formatting: Disable any text editor Prettier extensions to take advantage of the built-in rules._
