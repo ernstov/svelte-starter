@@ -1,4 +1,4 @@
-# Svelte Starter 3
+# Svelte Starter
 
 ### Notes
 * _Do not use or reproduce The Pudding logos or fonts without written permission._
